@@ -12,11 +12,6 @@ class Login extends Controller{
 
     public function register ()
     {
-        $data['register'] = "Register";
-        $data['css'] = "../app/views/css/bootstrap.css";
-
-        $this->Views('/base/header', $data);
-        $this->Views('/login/register');
-        $this->Views('/base/footer');
+        
     }
 }

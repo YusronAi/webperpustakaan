@@ -53,6 +53,11 @@ class Router
 
         // Parameter yang ditulis setelah controller dan method 
         // Cek jika url kosong
+        if(!empty($url)){
+            // Ambil data dan masukkan ke array params
+            $this->params = array_values($url);
+        }
+        
         call_user_func_array([$this->controller, $this->method], $this->params);
     }
 

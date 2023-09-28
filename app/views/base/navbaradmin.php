@@ -5,6 +5,7 @@
     </button>
     <div class="navbar-collapse collapse" id="navbar">
         <ul class="navbar-nav">
+            <li class="nav-item"><a href="/webperpustakaan/dashboard/databuku" class="nav-link">Data Buku</a></li>
             <li class="nav-item"><a href="/webperpustakaan/dashboard/daftaranggota" class="nav-link">Daftar Anggota</a></li>
             <li class="nav-item"><a href="/webperpustakaan/dashboard/transaksi" class="nav-link">Transaksi</a></li>
         </ul>

@@ -3,7 +3,7 @@
 
 class Controller {
     // Buat method untuk menampilkan tampilan
-    public function Views ($view, $data = []){
+    public function views ($view, $data = []){
         // Panggil view di folder Views
         require_once('app/views'.$view.'.php');
     }

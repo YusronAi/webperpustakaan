@@ -23,8 +23,8 @@
                 <td><?= $user['alamat']; ?></td>
                 <td><?= $user['nomor_telepone']; ?></td>
                 <td><?= $user['email']; ?></td>
-                <td><?= $user['password']; ?></td>
-                <td><?= $user['role']; ?></td>
+                <td><?= $user['pass']; ?></td>
+                <td><?= $user['roles']; ?></td>
             </tr>
             <?php $i++ ?>
             <?php endforeach; ?>

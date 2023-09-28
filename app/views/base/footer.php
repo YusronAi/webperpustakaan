@@ -3,8 +3,7 @@
         <span class="text-white">Copyright by @Group1</span>
     </div>
 </footer>
-<script src="app/views/js/bootstrap.bundle.js"></script>
-<script src="app/views/js/bootstrap.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
