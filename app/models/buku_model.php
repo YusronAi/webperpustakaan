@@ -16,6 +16,13 @@ class Buku_Model {
         return $this->db->resultSet();
     }
 
+    public function getBookById($id)
+    {
+        $this->db->query("SELECT * FROM tabel_buku WHERE id=:id");
+        $this->db->bind('id', $id);
+        return $this->db->resultSingle();
+    }
+
     public function add ($data)
     {
         // Tambah ke database
@@ -37,7 +44,7 @@ class Buku_Model {
     public function delete ($id)
     {
         // Hapus nilai dalam tabel_buku dengan id
-        $query = "DELETE FROM tabel_buku WHERE id_buku=:id";
+        $query = "DELETE FROM tabel_buku WHERE id=:id";
         $this->db->query($query);
 
         $this->db->bind('id', $id);
@@ -49,21 +56,20 @@ class Buku_Model {
     public function edit ($data)
     {
         // Ubah data dalam tabel_buku dengan id
-        $query = "UPDATE tabel_buku SET id_buku='', id_kategori=:id_kategori, judul_buku=:judul_buku, pengarang=:pengarang, penerbit=:penerbit, tahun_terbit=:tahun_terbit, stock_buku=:stock_buku WHERE id_buku=:id";
+        $query = "UPDATE tabel_buku SET id_kategori=:id_kategori, judul_buku=:judul_buku, pengarang=:pengarang, penerbit=:penerbit, tahun_terbit=:tahun_terbit, stock_buku=:stock_buku WHERE id=:id";
 
         $this->db->query($query);
 
-
-        $this->db->bind('id', $data['id_buku']);
         $this->db->bind('id_kategori', $data['id_kategori']);
         $this->db->bind('judul_buku', $data['judul_buku']);
         $this->db->bind('pengarang', $data['pengarang']);
         $this->db->bind('penerbit', $data['penerbit']);
         $this->db->bind('tahun_terbit', $data['tahun_terbit']);
         $this->db->bind('stock_buku', $data['stock_buku']);
+        $this->db->bind('id', $data['id']);
 
         $this->db->execute();
         
-        return $this->db->affectedRows();
+        return true;
     }
 }
