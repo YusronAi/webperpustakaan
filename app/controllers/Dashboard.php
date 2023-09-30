@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // Buat class untuk tampilan dashbord 
 
 class Dashboard extends Controller
@@ -15,6 +15,10 @@ class Dashboard extends Controller
         $this->views('/base/navbaradmin');
         $this->views('/dashboard/index', $data);
         $this->views('/base/footer');
+
+        if (!($_SESSION['login'])){
+            header('location: '. Config::BASEURL . '/login');
+        }
     }
 
     public function dataBuku()
@@ -26,6 +30,10 @@ class Dashboard extends Controller
         $this->views('/base/navbaradmin');
         $this->views('/dashboard/databuku', $data);
         $this->views('/base/footer');
+
+        if (!($_SESSION['login'])){
+            header('location: '. Config::BASEURL . '/login');
+        }
     }
 
     public function tambah()
@@ -39,6 +47,10 @@ class Dashboard extends Controller
             echo "Gagal";
             exit;
         }
+
+        if (!($_SESSION['login'])){
+            header('location: '. Config::BASEURL . '/login');
+        }
     }
 
     public function hapusBuku($id)
@@ -49,6 +61,10 @@ class Dashboard extends Controller
         } else {
             header('location: ' . Config::BASEURL . '/dashboard/databuku');
             exit;
+        }
+
+        if (!($_SESSION['login'])){
+            header('location: '. Config::BASEURL . '/login');
         }
     }
 
@@ -71,6 +87,10 @@ class Dashboard extends Controller
             } else {
                 echo "<script> alert('gagal'); </script>";
             }
+        }
+
+        if (!($_SESSION['login'])){
+            header('location: '. Config::BASEURL . '/login');
         }
     }
 

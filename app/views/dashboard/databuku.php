@@ -29,7 +29,7 @@
                     <td><?= $book['penerbit']; ?></td>
                     <td><?= $book['tahun_terbit']; ?></td>
                     <td><?= $book['stock_buku']; ?></td>
-                    <td><a href="<?= Config::BASEURL; ?>/dashboard/ubahbuku/<?= $book['id']; ?>">Ubah</a> | <a href="<?= Config::BASEURL; ?>/dashboard/hapusbuku/<?= $book['id']; ?> " class="badge text-white bg-danger">Hapus</a></td>
+                    <td><a href="<?= Config::BASEURL; ?>/dashboard/ubahbuku/<?= $book['id']; ?>" class="badge bg-success text-white">Ubah</a> | <a href="<?= Config::BASEURL; ?>/dashboard/hapusbuku/<?= $book['id']; ?> " class="badge text-white bg-danger">Hapus</a></td>
                 </tr>
                 <?php $i++ ?>
             <?php endforeach; ?>
@@ -57,33 +57,6 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Tambah</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ubah Buku</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="<?= Config::BASEURL; ?>/dashboard/ubahbuku" method="post">
-                    <input type="" class="form-control" id="id" name="id" value="<?= $book['id']; ?>"><br>
-                    <input type="text" name="judul_buku" id="judul_buku" placeholder="<?= $book['judul_buku']; ?>" value="<?= $book['judul_buku']; ?>"><br>
-                    <input type="number" name="id_kategori" id="id_kategori" placeholder="<?= $book['id_kategori']; ?>"><br>
-                    <input type="text" name="pengarang" id="pengarang" placeholder="<?= $book['pengarang']; ?>"><br>
-                    <input type="text" name="penerbit" id="penerbit" placeholder="<?= $book['penerbit']; ?>"><br>
-                    <input type="date" name="tahun_terbit" id="tahun_terbit" placeholder="<?= $book['tahun_terbit']; ?>"><br>
-                    <input type="number" name="stock_buku" id="stock_buku" placeholder="<?= $book['stock_buku']; ?>"><br>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Ubah</button>
                     </div>
                 </form>
             </div>

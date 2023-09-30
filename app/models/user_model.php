@@ -65,8 +65,14 @@ class User_Model {
         return $this->db->resultSet();
     }
 
-    // public function login ($data)
-    // {
-    //     $query = "SELECT * FROM user WHERE nama_anggota='$data'"
-    // }
+    public function log ($data)
+    {
+        $query = "SELECT * FROM user WHERE nama_anggota=:nama_anggota";
+
+        $this->db->query($query);
+
+        $this->db->bind('nama_anggota', $data['nama_anggota']);
+
+        return $this->db->resultSingle();
+    }
 }
